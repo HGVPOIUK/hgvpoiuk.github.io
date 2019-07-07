@@ -1,0 +1,16 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "0",
+				"popupContent": "Point n61.8,e0.6(./geojson/n618e6.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [0.6, 61.8]
+			}
+		}
+	]
+}

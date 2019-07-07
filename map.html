@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HGV POI UK - Interactive Map</title>
+     <link rel="stylesheet" href="/leaflet.js@1.5.1/leaflet.css" />
+     <script src="/leaflet.js@1.5.1/leaflet.js"></script>
+     <script src="/leaflet.staticBBoxGeoJSON.js"></script>
+     <style type="text/css">
+     </style>
+  </head>
+  <body>
+    <h1>HGV POI UK</h1>
+    <p>Heavy Goods Vehicle Points of Interest, United Kingdom.</p>
+		<h3>Disclaimer</h3>
+		<p>The data provided in this site is provided for informational and planning purposes only. Map information is believed to be accurate but accuracy is not guaranteed. Any errors or omissions should be reported to HGVPOI.UK (bob@hgvpoi.uk). In no event will the HGVPOI.UK be liable for any damages that might arise from the use of this mapping service or the information it contains.</p>
+    <div id="map" style="width: 100%; height: 600px;"></div>
+		<p>Choose the Points of Interest to show on the map:
+			<label onClick="showHideAll(this, 'map_height_restriction')">Height Restrictions <input type="checkbox" checked></label>
+			<label onClick="showHideAll(this, 'map_width_restriction')">Width Restrictions<input type="checkbox" checked></label>
+			<label onClick="showHideAll(this, 'map_weight_restriction')">Weight Restrictions<input type="checkbox" checked></label>
+			<label onClick="showHideAll(this, 'map_length_restriction')">Length Restrictions<input type="checkbox" checked></label>
+			<label onClick="showHideAll(this, 'map_parking')">Parking<input type="checkbox" checked></label>
+		</p>
+    <p>Attribution: <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>, <a href="https://github.com/BenjaminVadant/leaflet-ugeojson" title="A leaflet plugin that updates a geojson layer each time the user moves the map">uGeoJSON Plugin</a> (modified) | Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a></p>
+
+    <script type="text/javascript">
+		var mymap = L.map('map', {
+			maxBounds: [
+				[49, -8],
+				[62, 2]
+				],
+			minZoom:5
+			}).setView([54.218608,-3.429051], 5);
+
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+			attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+			maxZoom: 18,
+			maxBounds: [[49, -8], [62, 2]],
+			id: 'mapbox.streets',
+			accessToken: 'pk.eyJ1IjoiaGd2cG9pLXVrIiwiYSI6ImNqdjVoMjhpcjBnYjY0Y28ycWRmY2o4bDEifQ.xocouAaaO6rpkjqQzqddtg'
+			}).addTo(mymap);
+
+		L.staticBBoxGeoJSONLayer({
+			baseURL:"/geojson/",
+			debug:false
+			},
+			{
+				onEachFeature: 	function (feature, layer) {
+					var popupContent = "";
+
+					if (feature.properties && feature.properties.popupContent) {
+						popupContent += feature.properties.popupContent;
+					}
+					layer.bindPopup(popupContent)
+				},
+
+				pointToLayer: function (feature, latlng) {
+					var ptlFillColor = "#FFFF00";
+					var ptlColor = "#FF0000";
+					var ptlClassName = "map_poi";
+					
+					if(feature.properties && feature.properties.type) {
+						switch(feature.properties.type) {
+							case "height_restriction":
+								ptlFillColor = "#FF0000";
+								ptlColor = "#FF0000";
+								ptlClassName = "map_height_restriction";
+							break;
+							case "weight_restriction":
+								ptlFillColor = "#00CC00";
+								ptlColor = "#00CC00";
+								ptlClassName = "map_weight_restriction";
+							break;
+							case "width_restriction":
+								ptlFillColor = "#0000CC";
+								ptlColor = "#0000CC";
+								ptlClassName = "map_width_restriction";
+							break;
+							case "length_restriction":
+								ptlFillColor = "#CC00CC";
+								ptlColor = "#CC00CC";
+								ptlClassName = "map_length_restriction";
+							break;
+							case "parking":
+								ptlFillColor = "#FF8000";
+								ptlColor = "#FF8000";
+								ptlClassName = "map_parking";
+							break;
+							default:
+								// code block
+							} 
+					}
+					
+					return L.circleMarker(latlng, {
+						radius: 5,
+						fillColor: ptlFillColor,
+						color: ptlColor,
+						className: ptlClassName,
+						weight: 2,
+						opacity: 1,
+						fillOpacity: 0.2
+						});
+				}
+		}).addTo(mymap);
+		
+		function showHideAll(checkboxLabel, className) {
+			var elems = document.getElementsByClassName(className);
+			/*console.log(checkboxLabel);*/
+			for (i = 0; i < elems.length; i++) {
+				var elem = elems[i];
+				if(checkboxLabel.lastChild.checked === true) {
+					elem.style.display = 'block';
+				}
+				else {
+					elem.style.display = 'none';
+				}
+			}
+		}
+    </script>
+  </body>
+</html>

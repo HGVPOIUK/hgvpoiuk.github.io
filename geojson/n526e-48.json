@@ -1,0 +1,136 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "0",
+				"popupContent": "Point n52.6,e-4.8(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.8, 52.6]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "1",
+				"type": "height_restriction",
+				"popupContent": "height_restriction n52.70,e-4.79(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.79, 52.70]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "2",
+				"type": "width_restriction",
+				"popupContent": "width_restriction n52.70,e-4.78(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.78, 52.70]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "3",
+				"type": "weight_restriction",
+				"popupContent": "weight_restriction n52.70,e-4.77(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.77, 52.70]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "4",
+				"type": "length_restriction",
+				"popupContent": "lenght_restriction n52.70,e-4.76(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.76, 52.70]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "5",
+				"type": "parking",
+				"popupContent": "parking n52.70,e-4.75(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.75, 52.70]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "6",
+				"type": "height_restriction",
+				"popupContent": "height_restriction n52.71,e-4.79(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.79, 52.71]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "7",
+				"type": "width_restriction",
+				"popupContent": "width_restriction n52.71,e-4.78(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.78, 52.71]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "8",
+				"type": "weight_restriction",
+				"popupContent": "weight_restriction n52.71,e-4.77(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.77, 52.71]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "9",
+				"type": "length_restriction",
+				"popupContent": "lenght_restriction n52.71,e-4.76(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.76, 52.71]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "10",
+				"type": "parking",
+				"popupContent": "parking n52.71,e-4.75(./geojson/n526e-48.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-4.75, 52.71]
+			}
+		}
+	]
+}

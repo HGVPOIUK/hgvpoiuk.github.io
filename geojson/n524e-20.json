@@ -1,0 +1,27 @@
+{
+	"type": "FeatureCollection",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "0",
+				"popupContent": "Point n52.4,e-2(./geojson/n524e-20.json)"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-2, 52.4]
+			}
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"id": "56",
+				"popupContent": "<h3>Height Restriction</h3><p><a href=\"/id56.html\">15'0&quot; (4.6m) [marked] bridge on Aston Hall Road, B6</a><br/>Last verified: 2019-05-20T00:00:00+00:00</p>"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [-1.873784, 52.506462]
+			}
+		}
+	]
+}
