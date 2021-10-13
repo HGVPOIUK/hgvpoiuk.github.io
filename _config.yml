@@ -18,7 +18,7 @@ markdown: kramdown
 collections:
   pois:
     output: true
-    permalink: /poi/:name.html
+    permalink: /poi/:name:output_ext
   posts:
     output: true
     permalink: /:year/:title:output_ext
