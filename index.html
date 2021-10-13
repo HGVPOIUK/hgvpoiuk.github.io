@@ -32,4 +32,18 @@ layout: default
     {% endfor %}
   </ul>
 
+  <h1 class="page-heading">Pages</h1>
+
+  <ul class="post-list">
+    {% for Lpage in site.pages %}
+      <li>
+        <span class="post-meta">meta</span>
+
+        <h2>
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ Lpage.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
 </div>
