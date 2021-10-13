@@ -15,4 +15,4 @@ markdown: kramdown
 collections:
   pois:
     output: true
-    permalink: /poi/:path/
+    permalink: /poi/:path.html
