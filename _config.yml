@@ -16,7 +16,7 @@ markdown: kramdown
 
  
 collections:
-  pois:
+  poi:
     output: true
     permalink: /poi/:name:output_ext
   posts:
