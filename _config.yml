@@ -16,3 +16,6 @@ collections:
   pois:
     output: true
     permalink: /poi/:path.html
+  posts:
+    output: true
+    permalink: /:year/:title:output_ext
