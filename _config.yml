@@ -9,14 +9,14 @@ url: "https://hgvpoiuk.github.io"
 github_username:  hgvpoiuk
 
 # Handling Reading
-include: ["_pages", "_poi"]
+include: ["_pages", "_pois"]
 
 # Build settings
 markdown: kramdown
 
  
 collections:
-  poi:
+  pois:
     output: true
     permalink: /poi/:name:output_ext
   posts:
