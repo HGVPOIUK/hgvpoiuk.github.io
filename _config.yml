@@ -8,6 +8,9 @@ baseurl: ""
 url: "https://hgvpoiuk.github.io"
 github_username:  hgvpoiuk
 
+# Handling Reading
+include ["_pages", "_poi"]
+
 # Build settings
 markdown: kramdown
 
